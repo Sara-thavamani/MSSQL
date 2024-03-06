@@ -1,0 +1,25 @@
+name: CI/CD for MSSQL Dockerfile
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Build Docker image
+        run: docker build --pull --rm -f "Dockerfile" -t mssql:latest "."
+
+      - name: Log in to Docker Hub
+        run: echo ${{ secrets.MSSQL }} | docker login -u saralaaa --password-stdin
+
+      - name: Push Docker Image to Docker Hub
+        run: docker push mssql:latest
