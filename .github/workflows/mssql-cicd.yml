@@ -19,7 +19,7 @@ jobs:
         run: docker build --pull --rm -f "Dockerfile" -t myproject:latest "."
 
       - name: Log in to Docker Hub
-        run: echo ${{ secrets.MSSQL }} | docker login -u saralaaa --password-stdin
-
+        run: |
+         echo ${{ secrets.MSSQL }} | docker login -u saralaaa --password-stdin docker info
       - name: Push Docker Image to Docker Hub
         run: docker push myproject:latest
