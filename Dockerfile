@@ -8,4 +8,4 @@ WORKDIR /usr/src/app
 COPY Table2.sql /usr/src/app/
 
 # Set the entrypoint to execute the SQL script on container startup
-ENTRYPOINT [ "bash", "-c", "/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P 'Bama@#123' -d master -i Table1.sql" ]
+ENTRYPOINT [ "bash", "-c", "/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P 'Bama@#123' -d master -i Table2.sql" ]
