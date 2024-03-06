@@ -16,10 +16,10 @@ jobs:
         uses: actions/checkout@v2
       
       - name: Build Docker image
-        run: docker build --pull --rm -f "Dockerfile" -t mssql:latest "."
+        run: docker build --pull --rm -f "Dockerfile" -t myproject:latest "."
 
       - name: Log in to Docker Hub
         run: echo ${{ secrets.MSSQL }} | docker login -u saralaaa --password-stdin
 
       - name: Push Docker Image to Docker Hub
-        run: docker push mssql:latest
+        run: docker push myproject:latest
