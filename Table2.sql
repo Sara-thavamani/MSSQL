@@ -12,5 +12,6 @@ VALUES
   (2, 'Jane Smith', 30, 'Female', 'B'),
   (3, 'Michael Johnson', 28, 'Male', 'B+'),
   (4, 'Emily Davis', 22, 'Female', 'A-'),
-  (5,'sarala', 23, 'Female', 'B' );
+  (5,'sarala', 23, 'Female', 'B' ),
+  (6,'hano', 50, 'Female', 'A' );
 SELECT * FROM [dbo].[Table2];
